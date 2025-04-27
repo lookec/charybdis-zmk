@@ -3,6 +3,42 @@ layers:
   Base:
   - Q
   - W
+  - F
+  - P
+  - B
+  - J
+  - L
+  - U
+  - Y
+  - {t: '$$mdi:backspace$$', type: backspace}
+  - {t: A, h: '$$mdi:apple-keyboard-command$$'}
+  - {t: R, h: '$$mdi:apple-keyboard-option$$'}
+  - {t: S, h: '$$mdi:apple-keyboard-control$$'}
+  - {t: T, h: '$$mdi:apple-keyboard-shift$$'}
+  - G
+  - M
+  - {t: N, h: '$$mdi:apple-keyboard-shift$$'}
+  - {t: E, h: '$$mdi:apple-keyboard-control$$'}
+  - {t: I, h: '$$mdi:apple-keyboard-option$$'}
+  - {t: O, h: '$$mdi:apple-keyboard-command$$'}
+  - Z
+  - X
+  - C
+  - D
+  - V
+  - K
+  - H
+  - ','
+  - .
+  - /
+  - $$mdi:keyboard-esc$$
+  - {t: '$$mdi:keyboard-space$$', h: Navigation}
+  - {t: '$$mdi:keyboard-tab$$', h: Num & Function}
+  - {t: '$$mdi:keyboard-return$$', type: enter}
+  - {t: Symbol, h: sticky}
+  KR qwerty:
+  - Q
+  - W
   - E
   - R
   - T
@@ -33,10 +69,10 @@ layers:
   - /
   - $$mdi:keyboard-esc$$
   - {t: '$$mdi:keyboard-space$$', h: Navigation}
-  - {t: '$$mdi:keyboard-tab$$', h: KR qwerty}
+  - {t: '$$mdi:keyboard-tab$$', h: Num & Function}
   - {t: '$$mdi:keyboard-return$$', type: enter}
   - {t: Symbol, h: sticky}
-  KR qwerty:
+  Num & Function:
   - {t: ▽, type: trans}
   - F7
   - F8
