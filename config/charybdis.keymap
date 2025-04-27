@@ -52,6 +52,7 @@
             require-prior-idle-ms = <125>;
             hold-trigger-on-release;
         };
+
         to_korean: to_korean {
             label = "TO_KOREAN";
             compatible = "zmk,behavior-macro";
@@ -96,7 +97,6 @@
             // 홀드: SYM 레이어 momentary로 이동
         };
     };
-};
 
     keymap {
         compatible = "zmk,keymap";
