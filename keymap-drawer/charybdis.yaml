@@ -8,9 +8,9 @@ layers:
   - T
   - Y
   - U
-  - I
   - O
   - P
+  - {t: '$$mdi:backspace$$', type: backspace}
   - {t: A, h: '$$mdi:apple-keyboard-command$$'}
   - {t: S, h: '$$mdi:apple-keyboard-option$$'}
   - {t: D, h: '$$mdi:apple-keyboard-control$$'}
@@ -21,7 +21,7 @@ layers:
   - {t: K, h: '$$mdi:apple-keyboard-control$$'}
   - {t: L, h: '$$mdi:apple-keyboard-option$$'}
   - {t: ;, h: '$$mdi:apple-keyboard-command$$'}
-  - {t: Z, h: Pointer}
+  - Z
   - X
   - C
   - V
@@ -30,33 +30,33 @@ layers:
   - M
   - ','
   - .
-  - {t: /, h: Pointer}
-  - {t: '$$mdi:keyboard-esc$$', h: Media}
+  - /
+  - $$mdi:keyboard-esc$$
   - {t: '$$mdi:keyboard-space$$', h: Navigation}
-  - {t: Numeral/Function, h: sticky}
+  - {t: '$$mdi:keyboard-tab$$', h: KR qwerty}
   - {t: '$$mdi:keyboard-return$$', type: enter}
   - {t: Symbol, h: sticky}
-  Numeral/Function:
+  KR qwerty:
   - {t: ▽, type: trans}
   - F7
   - F8
   - F9
   - F12
-  - {t: ▽, type: trans}
+  - {t: '$$mdi:backspace$$', type: backspace}
   - '7'
   - '8'
   - '9'
-  - $$mdi:backspace-reverse-outline$$
+  - '-'
   - {t: ▽, type: trans}
   - F4
   - F5
   - F6
   - F11
-  - {t: ▽, type: trans}
+  - $$mdi:backspace-reverse-outline$$
   - '4'
   - '5'
   - '6'
-  - {t: '$$mdi:backspace$$', type: backspace}
+  - +
   - {t: ▽, type: trans}
   - F1
   - F2
@@ -66,7 +66,7 @@ layers:
   - '1'
   - '2'
   - '3'
-  - {t: ▽, type: trans}
+  - '='
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {type: held}
@@ -109,182 +109,38 @@ layers:
   - {t: ▽, type: trans}
   - {type: held}
   Navigation:
+  - $$mdi:apple-keyboard-caps$$
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - $$mdi:keyboard-tab$$
+  - Ctl+Z
+  - Ctl+Y
+  - {t: '$$mdi:backspace$$', type: backspace}
+  - HOME
+  - $$mdi:arrow-up-bold$$
+  - PAGE UP
+  - '&mkp MCLK'
+  - $$mdi:apple-keyboard-command$$
+  - $$mdi:apple-keyboard-option$$
+  - $$mdi:apple-keyboard-control$$
+  - $$mdi:apple-keyboard-shift$$
   - {t: ▽, type: trans}
   - $$mdi:backspace-reverse-outline$$
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
   - $$mdi:arrow-left-bold$$
   - $$mdi:arrow-down-bold$$
-  - $$mdi:arrow-up-bold$$
   - $$mdi:arrow-right-bold$$
-  - {t: '$$mdi:backspace$$', type: backspace}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - HOME
-  - PAGE DOWN
-  - PAGE UP
-  - END
-  - INS
-  - {t: ▽, type: trans}
-  - {type: held}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  Media:
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - $$mdi:bluetooth-off$$
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - $$mdi:bluetooth-off$$
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - $$mdi:skip-previous$$
-  - $$mdi:volume-low$$
-  - $$mdi:volume-off$$
-  - $$mdi:volume-high$$
-  - $$mdi:skip-next$$
-  - $$mdi:skip-previous$$
-  - $$mdi:volume-low$$
-  - $$mdi:volume-off$$
-  - $$mdi:volume-high$$
-  - $$mdi:skip-next$$
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {type: held}
-  - PLAY PAUSE
-  - STOP
-  - STOP
-  - PLAY PAUSE
-  Pointer:
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - $$mdi:apple-keyboard-command$$
-  - $$mdi:apple-keyboard-option$$
-  - $$mdi:apple-keyboard-control$$
-  - $$mdi:apple-keyboard-shift$$
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - $$mdi:apple-keyboard-shift$$
-  - $$mdi:apple-keyboard-control$$
-  - $$mdi:apple-keyboard-option$$
-  - $$mdi:apple-keyboard-command$$
-  - {type: held}
-  - Scroll
-  - Sniper
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: Sniper, h: toggle}
-  - {t: Scroll, h: toggle}
-  - {t: ▽, type: trans}
   - '&mkp RCLK'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - Ctl+X
+  - Ctl+C
+  - Ctl+V
+  - INS
+  - END
+  - PSCRN
+  - PAGE DOWN
   - '&mkp LCLK'
-  - '&mkp MCLK'
-  - '&mkp MCLK'
-  - '&mkp LCLK'
-  Scroll:
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {type: held}
-  - {type: held}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  Sniper:
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {type: held}
-  - {t: ▽, type: trans}
-  - {type: held}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
