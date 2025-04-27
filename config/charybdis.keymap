@@ -15,7 +15,7 @@
 };
 
 &mt {
-    tapping-term-ms = <200>;
+    tapping-term-ms = <280>;
     require-prior-idle-ms = <150>;
 };
 
@@ -54,41 +54,46 @@
         };
     };
 macros {
-        to_korean: to_korean {
-            label = "TO_KOREAN";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            // 한영 전환 키 (OS에 따라 다름) + 레이어 전환
-            bindings = <&kp RALT &to 1>;  // 또는 &kp LA(SPACE) 등
-        };
-        
-        to_english: to_english {
-            label = "TO_ENGLISH";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp RALT &to 0>;
-        };
+    to_korean: to_korean {
+        label = "TO_KOREAN";
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings = <
+            &to 1
+            &kp RALT
+        >;
     };
+    
+    to_english: to_english {
+        label = "TO_ENGLISH";
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings = <
+            &to 0
+            &kp RALT
+        >;
+    };
+};
 
     keymap {
         compatible = "zmk,keymap";
         Base {
             label = "Base";
             bindings = <
-              &kp       Q  &kp       W  &kp        F  &kp        P  &kp B        &kp J  &kp        L  &kp        U  &kp       Y  &kp BACKSPACE  
-              &mt  LGUI A  &mt  LALT R  &mt  LCTRL S  &mt  LSHFT T  &kp G        &kp M  &mt  RSHFT N  &mt  RCTRL E  &mt  RALT I  &mt    RGUI O  
-              &kp       Z  &kp       X  &kp        C  &kp        D  &kp V        &kp K  &kp        H  &kp    COMMA  &kp     DOT  &kp     SLASH
-                                        &kp ESC  &lt NAV SPACE  &lt NUFU TAB      &kp ENTER &sl SYM
+              &kp       Q   &kp       W   &kp        F   &kp        P      &kp B           &kp J  &kp        L   &kp        U   &kp       Y   &kp BACKSPACE  
+              &hml  LGUI A  &hml  LALT R  &hml  LCTRL S  &hml  LSHFT T     &kp G           &kp M  &hmr  RSHFT N  &hmr  RCTRL E  &hmr  RALT I  &hmr    RGUI O  
+              &kp       Z   &kp       X   &kp        C   &kp        D      &kp V           &kp K  &kp        H   &kp    COMMA   &kp     DOT   &kp     SLASH
+                                          &kp ESC        &lt NAV SPACE     &lt NUFU TAB    &kp ENTER &sl SYM
             >;
         };
 
         KOR {
             label = "KR qwerty";
             bindings = <
-              &kp       Q  &kp       W  &kp        E  &kp        R  &kp T        &kp Y  &kp        U  &kp        O  &kp       P  &kp BACKSPACE  
-              &mt  LGUI A  &mt  LALT S  &mt  LCTRL D  &mt  LSHFT F  &kp G        &kp H  &mt  RSHFT J  &mt  RCTRL K  &mt  RALT L  &mt RGUI SEMI  
-              &kp       Z  &kp       X  &kp        C  &kp        V  &kp B        &kp N  &kp        M  &kp    COMMA  &kp     DOT  &kp     SLASH
-                                        &kp ESC       &lt NAV SPACE &lt NUFU TAB        &kp ENTER &sl SYM
+              &kp        Q   &kp        W   &kp         E   &kp         R   &kp T          &kp Y     &kp         U   &kp        O   &kp        P   &kp BACKSPACE  
+              &hml  LGUI A   &hml  LALT S   &hml  LCTRL D   &hml  LSHFT F   &kp G          &kp H     &hmr  RSHFT J   &hmr  RCTRL K  &hmr  RALT L   &hmr RGUI SEMI  
+              &kp        Z   &kp        X   &kp         C   &kp         V   &kp B          &kp N     &kp         M   &kp    COMMA   &kp      DOT   &kp     SLASH
+                                          &kp ESC        &lt NAV SPACE  &lt NUFU TAB       &kp ENTER &sl SYM
             >;
         };
 
