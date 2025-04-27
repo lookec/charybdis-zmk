@@ -35,7 +35,7 @@ layers:
   - {t: '$$mdi:keyboard-space$$', h: Navigation}
   - {t: '$$mdi:keyboard-tab$$', h: Num & Function}
   - {t: '$$mdi:keyboard-return$$', type: enter}
-  - {t: Symbol, h: sticky}
+  - '&ht_to_kor_sym'
   KR qwerty:
   - Q
   - W
@@ -71,7 +71,7 @@ layers:
   - {t: '$$mdi:keyboard-space$$', h: Navigation}
   - {t: '$$mdi:keyboard-tab$$', h: Num & Function}
   - {t: '$$mdi:keyboard-return$$', type: enter}
-  - {t: Symbol, h: sticky}
+  - '&ht_to_eng_sym'
   Num & Function:
   - {t: ▽, type: trans}
   - F7
@@ -143,7 +143,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {type: held}
+  - {t: ▽, type: trans}
   Navigation:
   - $$mdi:apple-keyboard-caps$$
   - {t: ▽, type: trans}
