@@ -63,18 +63,6 @@
             >;
         };
 
-        ht_to_kor_sym: to_korean_sym {
-            label = "TO_KOREAN_OR_SYM";
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;    // 탭 인식 시간
-            flavor = "balanced";        // 탭/홀드 균형
-            quick-tap-ms = <150>;       // (옵션) 빠른 탭 인식
-            bindings = <&to_korean &mo SYM>; 
-            // 탭: to_korean 매크로 실행
-            // 홀드: SYM 레이어 momentary로 이동
-        };
-
         to_english: to_english {
             label = "TO_ENGLISH";
             compatible = "zmk,behavior-macro";
@@ -83,18 +71,6 @@
                 &kp RALT    // 한/영 전환 키 (RALT나 다른 키 사용 가능)
                 &to 0       // 0번 레이어(Base)로 이동
             >;
-        };
-
-        ht_to_eng_sym: to_english_sym {
-            label = "TO_ENGLISH_OR_SYM";
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            flavor = "balanced";
-            quick-tap-ms = <150>;
-            bindings = <&to_english &mo SYM>;
-            // 탭: to_english 매크로 실행
-            // 홀드: SYM 레이어 momentary로 이동
         };
     };
 
@@ -106,7 +82,7 @@
               &kp       Q   &kp       W   &kp        F   &kp        P      &kp B           &kp J  &kp        L   &kp        U   &kp       Y   &kp BACKSPACE  
               &hml  LGUI A  &hml  LALT R  &hml  LCTRL S  &hml  LSHFT T     &kp G           &kp M  &hmr  RSHFT N  &hmr  RCTRL E  &hmr  RALT I  &hmr    RGUI O  
               &kp       Z   &kp       X   &kp        C   &kp        D      &kp V           &kp K  &kp        H   &kp    COMMA   &kp     DOT   &kp     SLASH
-                                          &kp ESC        &lt NAV SPACE     &lt NUFU TAB    &kp ENTER &ht_to_kor_sym
+                                          &kp ESC        &lt NAV SPACE     &lt NUFU TAB    &kp ENTER &sl SYM
             >;
         };
 
@@ -116,7 +92,7 @@
               &kp        Q   &kp        W   &kp         E   &kp         R   &kp T          &kp Y     &kp         U   &kp        O   &kp        P   &kp BACKSPACE  
               &hml  LGUI A   &hml  LALT S   &hml  LCTRL D   &hml  LSHFT F   &kp G          &kp H     &hmr  RSHFT J   &hmr  RCTRL K  &hmr  RALT L   &hmr RGUI SEMI  
               &kp        Z   &kp        X   &kp         C   &kp         V   &kp B          &kp N     &kp         M   &kp    COMMA   &kp      DOT   &kp     SLASH
-                                          &kp ESC        &lt NAV SPACE  &lt NUFU TAB       &kp ENTER &ht_to_eng_sym
+                                          &kp ESC        &lt NAV SPACE  &lt NUFU TAB       &kp ENTER &sl SYM
             >;
         };
 
