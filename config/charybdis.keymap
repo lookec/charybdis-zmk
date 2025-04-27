@@ -70,7 +70,7 @@
             tapping-term-ms = <200>;    // 탭 인식 시간
             flavor = "balanced";        // 탭/홀드 균형
             quick-tap-ms = <150>;       // (옵션) 빠른 탭 인식
-            bindings = <&to_korean>, <&mo SYM>; 
+            bindings = <&to_korean &mo SYM>; 
             // 탭: to_korean 매크로 실행
             // 홀드: SYM 레이어 momentary로 이동
         };
@@ -92,7 +92,7 @@
             tapping-term-ms = <200>;
             flavor = "balanced";
             quick-tap-ms = <150>;
-            bindings = <&to_english>, <&mo SYM>;
+            bindings = <&to_english &mo SYM>;
             // 탭: to_english 매크로 실행
             // 홀드: SYM 레이어 momentary로 이동
         };
