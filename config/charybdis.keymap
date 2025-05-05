@@ -3,12 +3,14 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/outputs.h>
+#include <dt-bindings/zmk/ext_power.h>
 
+// 레이어 정의
 #define BASE 0
-#define KOR 1
-#define NUFU 2
-#define SYM 3
-#define NAV 4
+#define NUFU 1
+#define SYM 2
+#define NAV 3
 
 &sl {
   release-after-ms = <250>;
@@ -22,7 +24,40 @@
 / {
     chosen { zmk,matrix_transform = &five_column_transform; };
 
-    #include "combos.dtsi"
+    combos {
+        compatible = "zmk,combos";
+        
+        // K+L 콤보로 한/영 전환
+        combo_kor_eng {
+            timeout-ms = <50>;
+            key-positions = <25 26>; // K와 L 키
+            bindings = <&kp RALT>;
+        };
+        
+        // Alt+Tab (창 전환) 콤보
+        combo_alt_tab {
+            timeout-ms = <50>;
+            key-positions = <15 16>; // H와 J 키
+            bindings = <&kp LA(TAB)>;
+        };
+        
+        // Ctrl+A (전체 선택) 콤보
+        combo_select_all {
+            timeout-ms = <50>;
+            key-positions = <10 20>; // A와 Z 키
+            bindings = <&kp LC(A)>;
+        };
+        
+        // Alt+F4 (창 닫기) 콤보
+        combo_close_window {
+            timeout-ms = <50>;
+            key-positions = <2 3>; // E와 R 키
+            bindings = <&kp LA(F4)>;
+        };
+        
+        // 기존 콤보 포함
+        #include "combos.dtsi"
+    };
 
     behaviors {
         hml: homewrow_mods_left {
@@ -52,47 +87,26 @@
             require-prior-idle-ms = <125>;
             hold-trigger-on-release;
         };
-
-        to_korean: to_korean {
-            label = "TO_KOREAN";
-            compatible = "zmk,behavior-macro";
+        
+        // 탭댄스 - 짧게 누르면 ESC, 길게 누르면 Caps Lock
+        td_esc_caps: tap_dance_esc_caps {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_ESC_CAPS";
             #binding-cells = <0>;
-            bindings = <
-                &kp RALT     // 한/영 전환 키 (여기 필요시 다른 키로 변경 가능)
-                &to 1        // 1번 레이어(KOR)로 이동
-            >;
-        };
-
-        to_english: to_english {
-            label = "TO_ENGLISH";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <
-                &kp RALT    // 한/영 전환 키 (RALT나 다른 키 사용 가능)
-                &to 0       // 0번 레이어(Base)로 이동
-            >;
+            tapping-term-ms = <200>;
+            bindings = <&kp ESC>, <&kp CAPS>;
         };
     };
 
     keymap {
         compatible = "zmk,keymap";
         Base {
-            label = "Base";
+            label = "QWERTY";
             bindings = <
-              &kp       Q   &kp       W   &kp        F   &kp        P      &kp B           &kp J  &kp        L   &kp        U   &kp       Y   &kp BACKSPACE  
-              &hml  LGUI A  &hml  LALT R  &hml  LCTRL S  &hml  LSHFT T     &kp G           &kp M  &hmr  RSHFT N  &hmr  RCTRL E  &hmr  RALT I  &hmr    RGUI O  
-              &kp       Z   &kp       X   &kp        C   &kp        D      &kp V           &kp K  &kp        H   &kp    COMMA   &kp     DOT   &kp     SLASH
-                                          &kp ESC        &lt NAV SPACE     &lt NUFU TAB    &kp ENTER &sl SYM
-            >;
-        };
-
-        KOR {
-            label = "KR qwerty";
-            bindings = <
-              &kp        Q   &kp        W   &kp         E   &kp         R   &kp T          &kp Y     &kp         U   &kp        O   &kp        P   &kp BACKSPACE  
-              &hml  LGUI A   &hml  LALT S   &hml  LCTRL D   &hml  LSHFT F   &kp G          &kp H     &hmr  RSHFT J   &hmr  RCTRL K  &hmr  RALT L   &hmr RGUI SEMI  
-              &kp        Z   &kp        X   &kp         C   &kp         V   &kp B          &kp N     &kp         M   &kp    COMMA   &kp      DOT   &kp     SLASH
-                                          &kp ESC        &lt NAV SPACE  &lt NUFU TAB       &kp ENTER &sl SYM
+              &kp       Q   &kp       W   &kp        E   &kp        R      &kp T           &kp Y  &kp        U   &kp        I   &kp       O   &kp BACKSPACE  
+              &hml  LGUI A  &hml  LALT S  &hml  LCTRL D  &hml  LSHFT F     &kp G           &kp H  &hmr  RSHFT J  &hmr  RCTRL K  &hmr  RALT L  &hmr    RGUI P  
+              &kp       Z   &kp       X   &kp        C   &kp        V      &kp B           &kp N  &kp        M   &kp    COMMA   &kp     DOT   &kp     SLASH
+                                          &td_esc_caps   &lt NAV SPACE     &lt NUFU TAB    &kp ENTER &sl SYM
             >;
         };
 
@@ -119,10 +133,10 @@
         Navigation {
             label = "Navigation";
             bindings = <
-              &kp CAPSLOCK  &trans    &trans     &kp LC(Z)  &kp LC(Y)      &kp BSPC  &kp HOME  &kp UP     &kp PAGE_UP    &mkp MCLK
-              &kp LGUI      &kp LALT  &kp LCTRL  &kp LSHFT  &trans         &kp DEL   &kp LEFT  &kp DOWN   &kp RIGHT      &mkp RCLK
-              &trans        &trans    &kp LC(X)  &kp LC(C)  &kp LC(V)      &kp INS   &kp END   &kp PSCRN  &kp PAGE_DOWN  &mkp LCLK
-                                      &trans     &trans     &trans         &trans         &trans
+              &trans        &trans     &bt BT_CLR  &bt BT_PRV  &bt BT_NXT    &kp BSPC  &kp HOME  &kp UP     &kp PAGE_UP    &mkp MCLK
+              &trans        &trans     &trans      &trans      &trans        &kp DEL   &kp LEFT  &kp DOWN   &kp RIGHT      &mkp RCLK
+              &kp LC(Z)     &kp LC(X)  &kp LC(C)   &kp LC(V)   &kp LC(Y)     &kp INS   &kp END   &kp PSCRN  &kp PAGE_DOWN  &mkp LCLK
+                                       &trans      &trans      &trans        &trans    &trans
             >;
         };
     };
