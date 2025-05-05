@@ -14,20 +14,6 @@
 combos {
   compatible = "zmk,combos";
 
-        combo_to_korean {
-            timeout-ms = <50>;
-            key-positions = <17 18>;
-            layers = <0>;
-            bindings = <&to_korean>;
-        };
-        
-        combo_to_english {
-            timeout-ms = <50>;
-            key-positions = <17 18>;
-            layers = <1>;
-            bindings = <&to_english>;
-        };
-
   COMBO(l_leftclick, &mkp LCLK, 21 22, BASE, COMBO_TERM_SLOW)
   COMBO(l_rightclick, &mkp RCLK, 22 23, BASE, COMBO_TERM_SLOW)
   COMBO(l_middleclick, &mkp MCLK, 21 23, BASE, COMBO_TERM_SLOW)
