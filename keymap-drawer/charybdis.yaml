@@ -144,3 +144,30 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+combos:
+- p: [25, 26]
+  k: $$mdi:apple-keyboard-option$$
+- p: [15, 16]
+  k: Alt+$$mdi:keyboard-tab$$
+- p: [10, 20]
+  k: Ctl+A
+- p: [2, 3]
+  k: Alt+F4
+- p: [21, 22]
+  k: '&mkp LCLK'
+  l: [QWERTY]
+- p: [22, 23]
+  k: '&mkp RCLK'
+  l: [QWERTY]
+- p: [21, 23]
+  k: '&mkp MCLK'
+  l: [QWERTY]
+- p: [27, 28]
+  k: '&mkp LCLK'
+  l: [QWERTY]
+- p: [28, 29]
+  k: '&mkp RCLK'
+  l: [QWERTY]
+- p: [27, 29]
+  k: '&mkp MCLK'
+  l: [QWERTY]
