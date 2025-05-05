@@ -14,11 +14,41 @@
 combos {
   compatible = "zmk,combos";
 
-  COMBO(l_leftclick, &mkp LCLK, 21 22, BASE, COMBO_TERM_SLOW)
-  COMBO(l_rightclick, &mkp RCLK, 22 23, BASE, COMBO_TERM_SLOW)
-  COMBO(l_middleclick, &mkp MCLK, 21 23, BASE, COMBO_TERM_SLOW)
+        // K+L 콤보로 한/영 전환
+        combo_kor_eng {
+            timeout-ms = <50>;
+            key-positions = <25 26>; // K와 L 키
+            bindings = <&kp RALT>;
+        };
+        
+        // Alt+Tab (창 전환) 콤보
+        combo_alt_tab {
+            timeout-ms = <50>;
+            key-positions = <15 16>; // H와 J 키
+            bindings = <&kp LA(TAB)>;
+        };
+        
+        // Ctrl+A (전체 선택) 콤보
+        combo_select_all {
+            timeout-ms = <50>;
+            key-positions = <10 20>; // A와 Z 키
+            bindings = <&kp LC(A)>;
+        };
+        
+        // Alt+F4 (창 닫기) 콤보
+        combo_close_window {
+            timeout-ms = <50>;
+            key-positions = <2 3>; // E와 R 키
+            bindings = <&kp LA(F4)>;
+        };
+        
 
-  COMBO(r_leftclick, &mkp LCLK, 27 28, BASE, COMBO_TERM_SLOW)
-  COMBO(r_rightclick, &mkp RCLK, 28 29, BASE, COMBO_TERM_SLOW)
-  COMBO(r_middleclick, &mkp MCLK, 27 29, BASE, COMBO_TERM_SLOW)
+
+        COMBO(l_leftclick, &mkp LCLK, 21 22, BASE, COMBO_TERM_SLOW)
+        COMBO(l_rightclick, &mkp RCLK, 22 23, BASE, COMBO_TERM_SLOW)
+        COMBO(l_middleclick, &mkp MCLK, 21 23, BASE, COMBO_TERM_SLOW)
+
+        COMBO(r_leftclick, &mkp LCLK, 27 28, BASE, COMBO_TERM_SLOW)
+        COMBO(r_rightclick, &mkp RCLK, 28 29, BASE, COMBO_TERM_SLOW)
+        COMBO(r_middleclick, &mkp MCLK, 27 29, BASE, COMBO_TERM_SLOW)
 }; 
