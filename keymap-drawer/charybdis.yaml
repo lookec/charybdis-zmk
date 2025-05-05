@@ -162,12 +162,12 @@ combos:
 - p: [21, 23]
   k: '&mkp MCLK'
   l: [QWERTY]
-- p: [27, 28]
+- p: [26, 27]
   k: '&mkp LCLK'
   l: [QWERTY]
-- p: [28, 29]
+- p: [27, 28]
   k: '&mkp RCLK'
   l: [QWERTY]
-- p: [27, 29]
+- p: [26, 28]
   k: '&mkp MCLK'
   l: [QWERTY]
