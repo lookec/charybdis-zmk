@@ -24,41 +24,6 @@
 / {
     chosen { zmk,matrix_transform = &five_column_transform; };
 
-    combos {
-        compatible = "zmk,combos";
-        
-        // K+L 콤보로 한/영 전환
-        combo_kor_eng {
-            timeout-ms = <50>;
-            key-positions = <25 26>; // K와 L 키
-            bindings = <&kp RALT>;
-        };
-        
-        // Alt+Tab (창 전환) 콤보
-        combo_alt_tab {
-            timeout-ms = <50>;
-            key-positions = <15 16>; // H와 J 키
-            bindings = <&kp LA(TAB)>;
-        };
-        
-        // Ctrl+A (전체 선택) 콤보
-        combo_select_all {
-            timeout-ms = <50>;
-            key-positions = <10 20>; // A와 Z 키
-            bindings = <&kp LC(A)>;
-        };
-        
-        // Alt+F4 (창 닫기) 콤보
-        combo_close_window {
-            timeout-ms = <50>;
-            key-positions = <2 3>; // E와 R 키
-            bindings = <&kp LA(F4)>;
-        };
-        
-        // 기존 콤보 포함
-        #include "combos.dtsi"
-    };
-
     behaviors {
         hml: homewrow_mods_left {
             compatible = "zmk,behavior-hold-tap";
