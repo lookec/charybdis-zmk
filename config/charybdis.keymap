@@ -3,7 +3,8 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/pointing.h>
+#include <dt-bindings/zmk/outputs.h>
+#include <dt-bindings/zmk/ext_power.h>
 
 // 레이어 정의
 
@@ -111,7 +112,7 @@
             bindings = <
   &trans  &trans  &trans  &trans  &trans    &trans  &trans     &trans     &trans     &trans
   &trans  &trans  &trans  &trans  &trans    &trans  &mkp MB4   &mkp MB5   &kp LC(W)  &trans
-  &trans  &trans  &trans  &trans  &trans    &trans  &mkp LCLK  &mkp RCLK  &mkp MCLK  &trans
+  &trans  &trans  &trans  &trans  &trans    &trans  &mkp LCLK  &mkp MCLK  &mkp RCLK  &trans
                   &trans  &trans  &trans    &trans  &trans
             >;
         };
